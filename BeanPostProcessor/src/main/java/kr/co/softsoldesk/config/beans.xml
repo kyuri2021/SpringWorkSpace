@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- #1  -->                 
+	<bean id='t1' class='kr.co.softsoldesk.beans.TestBean1' lazy-init='true' init-method="bean1_init"/>
+	<!-- #2 -->
+	<bean id='t2' class='kr.co.softsoldesk.beans.TestBean2' lazy-init='true' init-method="bean2_init"/>
+	<!-- #3 init-method가 호출되지 않아도 before와 after는 호출됨 -->
+	<!-- <bean id='t2' class='kr.co.softsoldesk.beans.TestBean2' lazy-init='true' /> -->
+	
+	<bean class='kr.co.softsoldesk.processor.TestBeanPostProcessor'/>
+</beans>
